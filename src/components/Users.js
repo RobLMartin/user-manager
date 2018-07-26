@@ -19,14 +19,16 @@ class Users extends Component {
       />
     ));
     return (
-      <div>
-        <h1 className="page-header">Users</h1>
+      <div className="container">
+        <h3 className="page-header">Users</h3>
+        <hr />
         <table className="table table-striped">
-          <thead>
+          <thead className="thead-dark">
             <tr>
               <th>Name</th>
               <th>Username</th>
               <th>Email</th>
+              <th />
             </tr>
           </thead>
           <tbody>{users}</tbody>

@@ -11,6 +11,11 @@ export default class User extends Component {
         <td>{this.props.name}</td>
         <td>{this.props.username}</td>
         <td>{this.props.email}</td>
+        <td>
+          <a href="#" className="text-danger">
+            X
+          </a>
+        </td>
       </tr>
     );
   }
