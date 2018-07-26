@@ -5,12 +5,19 @@ import Users from "./components/Users";
 import AddUser from "./components/AddUser";
 import "./App.css";
 
+const jumbotron = {
+  backgroundImage:
+    "linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://source.unsplash.com/user/ripato)",
+  backgroundSize: "cover",
+  color: "white"
+};
+
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <div className="App">
-          <div className="jumbotron text-center">
+          <div className="jumbotron text-center" style={jumbotron}>
             <div className="container">
               <h1>User Manager</h1>
               <p>
