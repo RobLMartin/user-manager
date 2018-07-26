@@ -24,15 +24,22 @@ class AddUser extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    if (
+      this.refs.name.value === "" ||
+      this.refs.username.value === "" ||
+      this.refs.email.value === ""
+    ) {
+      alert("Fields cannot be empty.");
+    } else {
+      const user = {
+        id: uuid.v4(),
+        name: this.state.name,
+        username: this.state.username,
+        email: this.state.email
+      };
 
-    const user = {
-      id: uuid.v4(),
-      name: this.state.name,
-      username: this.state.username,
-      email: this.state.email
-    };
-
-    this.props.createUser(user);
+      this.props.createUser(user);
+    }
   }
 
   render() {
@@ -45,6 +52,7 @@ class AddUser extends Component {
             <label htmlFor="">Name</label>
             <input
               type="text"
+              ref="name"
               name="name"
               onChange={this.handleChange}
               className="form-control"
@@ -55,6 +63,7 @@ class AddUser extends Component {
             <label htmlFor="">Username</label>
             <input
               type="text"
+              ref="username"
               name="username"
               onChange={this.handleChange}
               className="form-control"
@@ -65,6 +74,7 @@ class AddUser extends Component {
             <label htmlFor="">Email</label>
             <input
               type="email"
+              ref="email"
               name="email"
               onChange={this.handleChange}
               className="form-control"

@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 
 export default class User extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   deleteUser(id, e) {
     e.preventDefault();
     this.props.onDelete(id);
