@@ -5,6 +5,11 @@ export default class User extends Component {
     super(props);
   }
 
+  deleteUser(id, e) {
+    e.preventDefault();
+    this.props.onDelete(id);
+  }
+
   render() {
     return (
       <tr>
@@ -12,7 +17,11 @@ export default class User extends Component {
         <td>{this.props.username}</td>
         <td>{this.props.email}</td>
         <td>
-          <a href="#" className="text-danger">
+          <a
+            href="#"
+            className="text-danger"
+            onClick={this.deleteUser.bind(this, this.props.id)}
+          >
             X
           </a>
         </td>
