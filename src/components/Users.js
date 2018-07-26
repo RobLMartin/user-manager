@@ -9,6 +9,12 @@ class Users extends Component {
     this.props.fetchUsers();
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.newUser) {
+      this.props.users.unshift(nextProps.newUser);
+    }
+  }
+
   render() {
     const users = this.props.users.map(user => (
       <User
@@ -40,11 +46,13 @@ class Users extends Component {
 
 Users.propTypes = {
   fetchUsers: PropTypes.func.isRequired,
-  users: PropTypes.array.isRequired
+  users: PropTypes.array.isRequired,
+  newUser: PropTypes.object
 };
 
 const mapStateToProps = state => ({
-  users: state.users.users
+  users: state.users.users,
+  newUser: state.users.user
 });
 
 export default connect(

@@ -19,7 +19,7 @@ class App extends Component {
                 necessitatibus unde pariatur iusto, facilis quas libero
                 provident, tempore in iure eum ea. Assumenda.
               </p>
-              <a href="#" class="btn btn-primary">
+              <a href="#" className="btn btn-primary">
                 Read More
               </a>
             </div>
